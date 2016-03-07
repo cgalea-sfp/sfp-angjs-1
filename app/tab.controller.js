@@ -1,8 +1,11 @@
 angular.module('my-app').controller('TabController', TabController);
 
-function TabController() {
+TabController.$inject = ['TabService'];
+
+function TabController(TabService) {
   var vm = this;
-  var currentTab = 'JS';
+  var currentTab = TabService.getDefaultTab();
+  vm.availableTabs = TabService.getAvailableTabs();
 
   vm.getTab = getTab;
   vm.setTab = setTab;

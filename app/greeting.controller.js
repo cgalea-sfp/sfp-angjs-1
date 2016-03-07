@@ -1,18 +1,16 @@
 angular.module('my-app').controller('GreetingController', GreetingController);
 
-function GreetingController() {
-  var vm = this;
+GreetingController.$inject = ['DetailService', 'EmployeeService'];
 
-  vm.name = "Cristi";
-  vm.startYear = 2013;
-  vm.employeeData = {
-    team: "Architects",
-    floor: 1,
-    project: "Awesome"
-  };
+function GreetingController(DetailService, EmployeeService) {
+  var vm = this;
+  var currentDate = new Date();
+
+  vm.name = DetailService.getName();
+  vm.startYear = DetailService.calculateTimeInSFP(currentDate.getFullYear());
+  vm.employeeData = EmployeeService.getEmployeeData();
 
   vm.toggleEmployeeInfoString = toggleEmployeeInfoString;
-
 
   function toggleEmployeeInfoString() {
     vm.showEmployeeInfoString = !vm.showEmployeeInfoString;

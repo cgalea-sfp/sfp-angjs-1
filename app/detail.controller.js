@@ -1,18 +1,10 @@
 angular.module('my-app').controller('DetailController', DetailController);
 
-function DetailController() {
+DetailController.$inject = ['DetailService'];
+
+function DetailController(DetailService) {
   var vm = this;
-  vm.gender = 'm';
-  vm.interests = [{
-    name: "JavaScript",
-    level: "advanced"
-  },
-  {
-    name: "AngularJS",
-    level: "beginner"
-  },
-  {
-    name: "NodeJS",
-    level: "intermediate"
-  }];
+  vm.gender = DetailService.getGender();
+  vm.interests = DetailService.getInterests();
+  vm.interestsLevels = DetailService.getInterestsLevels()
 }
