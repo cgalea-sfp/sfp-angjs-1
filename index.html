@@ -4,9 +4,16 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body ng-app="my-app">
     <p>Hello World</p>
+    <div ng-controller="GreetingController as vm">
+      <p>My name is {{ vm.name }}</p>
+      <p>I have worked for SFP for the past {{ 2016 - vm.startYear }} years</p>
+      <button ng-click="vm.getEmployeeInfoString()">Show employee Info String</button>
+      <p>{{vm.employeeInfoString}}</p>
+    </div>
     <script src="lib/angular.min.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/greeting.controller.js"></script>
   </body>
 </html>

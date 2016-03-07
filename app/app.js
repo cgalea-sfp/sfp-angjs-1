@@ -1,1 +1,1 @@
-console.log("app.js is loaded properly");
+angular.module('my-app', []);
