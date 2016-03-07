@@ -10,10 +10,11 @@ function GreetingController() {
     floor: 1,
     project: "Awesome"
   };
-  vm.getEmployeeInfoString = getEmployeeInfoString;
+
+  vm.toggleEmployeeInfoString = toggleEmployeeInfoString;
 
 
-  function getEmployeeInfoString() {
-    vm.employeeInfoString = "I am part of team " + vm.employeeData.team + " located at the " + vm.employeeData.floor + " floor and I am currently working on project " + vm.employeeData.project;
+  function toggleEmployeeInfoString() {
+    vm.showEmployeeInfoString = !vm.showEmployeeInfoString;
   }
 }
