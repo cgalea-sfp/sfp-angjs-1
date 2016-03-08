@@ -1,5 +1,5 @@
-(function () {
-  'use strict'
+(function() {
+  'use strict';
 
   angular.module('main').controller('TabController', TabController);
 
@@ -16,6 +16,7 @@
     function getTab() {
       return currentTab;
     }
+
     function setTab(newTab) {
       currentTab = newTab;
     }

@@ -7,8 +7,7 @@
     <p>My interests are:</p>
     <ul>
       <li ng-repeat="interest in vm.interests">
-        <span>{{ interest.name }}</span>
-        -
+        <span>{{ interest.name }}</span> -
         <span class="bold-text" ng-class="{'green' : interest.level == vm.interestsLevels[2], 'orange' : interest.level == vm.interestsLevels[0]}">{{ interest.level | uppercase }}</span>
       </li>
     </ul>

@@ -1,5 +1,5 @@
-(function () {
-  'use strict'
+(function() {
+  'use strict';
 
   angular.module('main').service('EmployeeService', EmployeeService);
 
@@ -14,7 +14,7 @@
       project: "Awesome"
     };
 
-    function getEmployeeData () {
+    function getEmployeeData() {
       return employeeData;
     }
     return service;

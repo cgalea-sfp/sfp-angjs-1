@@ -1,5 +1,5 @@
-(function () {
-  'use strict'
+(function() {
+  'use strict';
 
   angular.module('interests').controller('InterestsController', InterestsController);
 

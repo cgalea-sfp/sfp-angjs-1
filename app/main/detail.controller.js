@@ -1,5 +1,5 @@
-(function () {
-  'use strict'
+(function() {
+  'use strict';
 
   angular.module('main').controller('DetailController', DetailController);
 
@@ -9,6 +9,6 @@
     var vm = this;
     vm.gender = DetailService.getGender();
     vm.interests = DetailService.getInterests();
-    vm.interestsLevels = DetailService.getInterestsLevels()
+    vm.interestsLevels = DetailService.getInterestsLevels();
   }
 })();

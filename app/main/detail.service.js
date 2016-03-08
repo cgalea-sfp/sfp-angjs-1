@@ -1,5 +1,5 @@
-(function () {
-  'use strict'
+(function() {
+  'use strict';
 
   angular.module('main').service('DetailService', DetailService);
 
@@ -19,12 +19,10 @@
     var interests = [{
       name: "JavaScript",
       level: interestsLevels[2]
-    },
-    {
+    }, {
       name: "AngularJS",
       level: interestsLevels[0]
-    },
-    {
+    }, {
       name: "NodeJS",
       level: interestsLevels[1]
     }];
