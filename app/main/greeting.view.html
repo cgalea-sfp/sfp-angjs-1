@@ -1,0 +1,6 @@
+<div class="page">
+  <p>My name is {{ vm.name }}</p>
+  <p>I have worked for SFP for the past {{ vm.startYear }} years</p>
+  <button ng-click="vm.toggleEmployeeInfoString()">{{ vm.showEmployeeInfoString ? 'Hide' : 'Show' }} employee Info String</button>
+  <p ng-show="vm.showEmployeeInfoString">I am part of team {{ vm.employeeData.team }} located at the {{ vm.employeeData.floor }} floor and I am currently working on project {{ vm.employeeData.project }}</p>
+</div>

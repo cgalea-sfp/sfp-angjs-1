@@ -1,0 +1,17 @@
+<div class="page">
+  <div class="left">
+    <img ng-if="vm.gender == 'm'" class="avatar" src="assets/male.png">
+    <img ng-if="vm.gender == 'f'" class="avatar" src="assets/female.png">
+  </div>
+  <div class="left">
+    <p>My interests are:</p>
+    <ul>
+      <li ng-repeat="interest in vm.interests">
+        <span>{{ interest.name }}</span>
+        -
+        <span class="bold-text" ng-class="{'green' : interest.level == vm.interestsLevels[2], 'orange' : interest.level == vm.interestsLevels[0]}">{{ interest.level | uppercase }}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>

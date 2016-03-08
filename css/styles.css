@@ -47,3 +47,28 @@
 .active-tab {
   background-color: #faa;
 }
+
+nav a {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+td, th, table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.row {
+  background: #c8d1d9;
+  cursor: pointer;
+}
+
+.row:hover td {
+  background: #c0e1c9;
+}
+
+.odd-row {
+  background: #faa;
+}

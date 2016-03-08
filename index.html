@@ -7,55 +7,32 @@
   </head>
   <body ng-app="my-app">
     <p>Hello World</p>
-    <div class="page" ng-controller="GreetingController as vm">
-      <p>My name is {{ vm.name }}</p>
-      <p>I have worked for SFP for the past {{ vm.startYear }} years</p>
-      <button ng-click="vm.toggleEmployeeInfoString()">{{ vm.showEmployeeInfoString ? 'Hide' : 'Show' }} employee Info String</button>
-      <p ng-show="vm.showEmployeeInfoString">I am part of team {{ vm.employeeData.team }} located at the {{ vm.employeeData.floor }} floor and I am currently working on project {{ vm.employeeData.project }}</p>
-    </div>
-    <div class="page" ng-controller="DetailController as vm">
-      <div class="left">
-        <img ng-if="vm.gender == 'm'" class="avatar" src="assets/male.png">
-        <img ng-if="vm.gender == 'f'" class="avatar" src="assets/female.png">
-      </div>
-      <div class="left">
-        <p>My interests are:</p>
-        <ul>
-          <li ng-repeat="interest in vm.interests">
-            <span>{{ interest.name }}</span>
-            -
-            <span class="bold-text" ng-class="{'green' : interest.level == vm.interestsLevels[2], 'orange' : interest.level == vm.interestsLevels[0]}">{{ interest.level | uppercase }}</span>
-          </li>
-        </ul>
-      </div>
-      <div class="clear"></div>
-    </div>
-    <div class="page" ng-controller="TabController as vm">
-      <ul class="tabs-handle">
-        <li ng-click="vm.setTab(vm.availableTabs.javascript)" ng-class="{ 'active-tab' : vm.getTab() == vm.availableTabs.javascript }">JS</li>
-        <li ng-click="vm.setTab(vm.availableTabs.angularjs)" ng-class="{ 'active-tab' : vm.getTab() == vm.availableTabs.angularjs }">Angular</li>
-        <li ng-click="vm.setTab(vm.availableTabs.nodejs)" ng-class="{ 'active-tab' : vm.getTab() == vm.availableTabs.nodejs }">Node</li>
-      </ul>
-      <div class="clear"></div>
-      <div class="tabs-content" ng-show="vm.getTab() == vm.availableTabs.javascript">
-        Facts about JavaScript
-      </div>
-      <div class="tabs-content" ng-show="vm.getTab() == vm.availableTabs.angularjs">
-        Facts about AngularJS
-      </div>
-      <div class="tabs-content" ng-show="vm.getTab() == vm.availableTabs.nodejs">
-        Facts about NodeJS
-      </div>
-    </div>
-
+    <nav>
+      <a ui-sref="greeting">Greeting</a>
+      <a ui-sref="detail">Detail</a>
+      <a ui-sref="tab">Tab</a>
+      <a ui-sref="interests">Interests</a>
+    </nav>
+    <ui-view></ui-view>
 
     <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
     <script src="app/app.js"></script>
-    <script src="app/greeting.controller.js"></script>
-    <script src="app/detail.controller.js"></script>
-    <script src="app/tab.controller.js"></script>
-    <script src="app/detail.service.js"></script>
-    <script src="app/employee.service.js"></script>
-    <script src="app/tab.service.js"></script>
+    <script src="app/main/main.module.js"></script>
+    <script src="app/interests/interests.module.js"></script>
+
+    <script src="app/main/main.route.js"></script>
+    <script src="app/main/greeting.controller.js"></script>
+    <script src="app/main/detail.controller.js"></script>
+    <script src="app/main/tab.controller.js"></script>
+    <script src="app/main/detail.service.js"></script>
+    <script src="app/main/employee.service.js"></script>
+    <script src="app/main/tab.service.js"></script>
+
+    <script src="app/interests/interests.route.js"></script>
+    <script src="app/interests/interests.controller.js"></script>
+    <script src="app/interests/interests.service.js"></script>
+    <script src="app/interests/addedit.interests.controller.js"></script>
   </body>
 </html>

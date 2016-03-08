@@ -1,1 +1,5 @@
-angular.module('my-app', []);
+(function () {
+  'use strict'
+
+  angular.module('my-app', ['ui.router', 'main', 'interests']);
+})();
