@@ -56,7 +56,7 @@
         My interests are:
         <ul>
           <li ng-repeat="interest in vm.interests">
-              {{interest.name}} - {{interest.level}}
+              {{interest.name}} - {{interest.level | uppercase}}
           </li>
         </ul>
       </p>
@@ -86,5 +86,6 @@
     <script src="app/app.js"></script>
     <script src="app/greeting.controller.js"></script>
     <script src="app/tab.controller.js"></script>
+    <script src="app/interest.service.js"></script>
   </body>
 </html>
