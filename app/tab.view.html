@@ -1,0 +1,21 @@
+<div class="page">
+  <nav>
+    <ul>
+      <li ng-click="vm.toggleTab('t1')" ng-class="{ 'active': vm.activeTab == 't1'}">Tab1</li>
+      <li ng-click="vm.toggleTab('t2')" ng-class="{ 'active': vm.activeTab == 't2'}">Tab2</li>
+      <li ng-click="vm.toggleTab('t3')" ng-class="{ 'active': vm.activeTab == 't3'}">Tab3</li>
+    </ul>
+  </nav>
+  <div class="clear"></div>
+  <div ng-show="vm.activeTab == 't1'" class="tab">
+    Tab 1
+    <img ng-if="!vm.isDesigner" src="https://d13yacurqjgara.cloudfront.net/users/108761/screenshots/1929245/dribbble-avatar-developer.png" />
+    <img ng-if="vm.isDesigner" src="http://www.milkstudio.co.nz/wp-content/themes/clientmachine_12/images/avatars/avatar1.png" />
+  </div>
+  <div ng-show="vm.activeTab ==  't2'" class="tab">
+    Tab 2
+  </div>
+  <div ng-show="vm.activeTab == 't3'" class="tab">
+    Tab 3
+  </div>
+</div>

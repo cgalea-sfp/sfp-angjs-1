@@ -1,0 +1,33 @@
+.page {
+  border: 1px solid  black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.tab {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+nav ul li {
+  float: left;
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.clear {
+  clear: both;
+}
+
+.active {
+  background: #e040d5;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}

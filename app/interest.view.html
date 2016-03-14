@@ -1,0 +1,20 @@
+<div class="page">
+  <p>
+    Hello my name is {{vm.name}}
+  </p>
+  <p>
+    I have been working in SFP for {{2016 - vm.startYear}} years
+  </p>
+  <button ng-click="vm.toggleInfo()">Toggle</button>
+  <p ng-show="vm.show">
+    I work in the {{vm.info.team}} team with {{vm.info.num_members}} others as a {{vm.info.role}}
+  </p>
+  <p>
+    My interests are:
+    <ul>
+      <li ng-repeat="interest in vm.interests">
+          {{interest.name}} - {{interest.level | uppercase}}
+      </li>
+    </ul>
+  </p>
+</div>

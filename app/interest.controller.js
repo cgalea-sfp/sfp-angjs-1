@@ -1,10 +1,10 @@
 (function () {
   'use strict';
-  angular.module('my-app').controller('GreetingController', GreetingController);
+  angular.module('my-app').controller('InterestController', InterestController);
 
-GreetingController.$inject = ['InterestService', 'PersinfoService'];
+InterestController.$inject = ['InterestService', 'PersinfoService'];
 
-  function GreetingController(InterestService, PersinfoService) {
+  function InterestController(InterestService, PersinfoService) {
     var vm = this;
 
     vm.name = PersinfoService.getName();
