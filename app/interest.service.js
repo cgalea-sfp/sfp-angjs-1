@@ -2,6 +2,7 @@
   angular.module('my-app').factory('InterestService', InterestService);
 
   function InterestService() {
+    var service = {};
     var interests = [{
       name: 'JavaScript',
       level: 'advanced'
@@ -13,9 +14,9 @@
       level: 'intermediate'
     }];
 
-    return {
-      getInterests: getInterests
-    };
+    service.getInterests = getInterests;
+
+    return service;
 
     function getInterests() {
       return interests;

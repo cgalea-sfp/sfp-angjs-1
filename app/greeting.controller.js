@@ -2,17 +2,14 @@
   'use strict';
   angular.module('my-app').controller('GreetingController', GreetingController);
 
-GreetingController.$inject = ['InterestService'];
+GreetingController.$inject = ['InterestService', 'PersinfoService'];
 
-  function GreetingController(InterestService) {
+  function GreetingController(InterestService, PersinfoService) {
     var vm = this;
-    vm.name = "Cristi";
-    vm.startYear = 2013;
-    vm.info = {
-      team: 'Architects',
-      role: 'JsArch',
-      num_members: 5
-    };
+
+    vm.name = PersinfoService.getName();
+    vm.startYear = PersinfoService.getStartYear();
+    vm.info = PersinfoService.getInfo();
     vm.toggleInfo = toggleInfo;
     vm.interests = InterestService.getInterests();
 
