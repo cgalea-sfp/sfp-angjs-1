@@ -1,0 +1,18 @@
+<div>
+  <p>{{vm.message}}</p>
+  <p>Hello my name is {{vm.name}}</p>
+  <div>
+    <img ng-if="vm.personalInfo.gender == 'm'" src="https://maxcdn.icons8.com/wp-content/uploads/2014/10/boy.png" />
+    <img ng-if="vm.personalInfo.gender != 'm'" src="https://maxcdn.icons8.com/wp-content/uploads/2014/10/girl.png"/ />
+  </div>
+  <button ng-click="vm.togglePersonalInfo()">Click me</button>
+  <p ng-show="vm.isVisible">I have {{vm.personalInfo.age}} years and I'm a {{ vm.personalInfo.gender == 'm' ? 'boy' : 'girl' }}</p>
+  <ul>
+    <li class="interest-item" ng-repeat="interest in vm.interests">
+      <p class="clickable" ng-click="vm.alertInfo(interest)">{{interest.name}}</p>
+      <p>{{interest.level}}</p>
+      <p>{{interest.isImproving ? 'Yes' : 'No'}}</p>
+    </li>
+  </ul>
+  <div class="clear"></div>
+</div>
