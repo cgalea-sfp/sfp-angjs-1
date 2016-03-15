@@ -7,8 +7,22 @@
 
   function InterestsAddEditController(InterestsService, $state) {
     var vm = this;
-    vm.pageName = $state.params.id ? 'Edit' : 'Add';
+    var isEdit = $state.params.id;
+    vm.pageName = isEdit ? 'Edit' : 'Add';
     vm.save = save;
+
+    if (isEdit) {
+      InterestsService.getInterestById($state.params.id).then(function (response) {
+        if (response.data.success) {
+          vm.interest = response.data.data;
+        } else {
+          alert(response.data.message);
+        }
+
+      }, function (error) {
+        console.log(error.message);
+      });
+    }
 
     function save(e) {
       e.preventDefault();

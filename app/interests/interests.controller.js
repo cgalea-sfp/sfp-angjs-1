@@ -7,7 +7,11 @@
 
   function InterestsController(InterestsService, $state) {
     var vm = this;
-    vm.interests = InterestsService.getInterests();
+    InterestsService.getInterests().then(function (response) {
+      vm.interests = response.data.data;
+    }, function (error) {
+      console.log('error: ' + error.message);
+    });
     vm.delteItem = delteItem;
 
     function delteItem(e, id) {

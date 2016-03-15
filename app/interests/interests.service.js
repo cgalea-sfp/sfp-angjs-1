@@ -3,7 +3,8 @@
 
   angular.module('interests').service('InterestsService', InterestsService);
 
-  function InterestsService() {
+  InterestsService.$inject = ['$http'];
+  function InterestsService($http) {
     var service = {
       getInterests: getInterests,
       getInterestById: getInterestById,
@@ -32,16 +33,17 @@
     }];
 
     function getInterests() {
-      return interests;
+      return $http.get('https://sfp-angjs1-back.herokuapp.com/api/interests');
     }
 
     function getInterestById(id) {
-      for (var i = 0, len = interests.length; i < len; i++) {
-        if (interests[i].id === id) {
-          return interests[i];
-        }
-      }
-      return false;
+      return $http.get('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + id);
+      // for (var i = 0, len = interests.length; i < len; i++) {
+      //   if (interests[i].id === id) {
+      //     return interests[i];
+      //   }
+      // }
+      // return false;
     }
 
     function addInterest(interest) {
