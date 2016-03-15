@@ -1,9 +1,11 @@
 (function() {
   'use strict';
-  
+
   angular.module('my-app').controller('GreetingController', GreetingController);
 
-  function GreetingController() {
+  GreetingController.$inject = ['InterestService'];
+
+  function GreetingController(InterestService) {
     var vm = this;
     vm.name = 'Cristi';
     vm.personalInfo = {
@@ -14,21 +16,7 @@
     vm.alertInfo = alertInfo;
     vm.isVisible = true;
 
-    vm.interests = [{
-      name: 'JavaScript',
-      level: 'Advanced',
-      isImproving: true
-    },
-    {
-      name: 'AngularJS',
-      level: 'Beginner',
-      isImproving: true
-    },
-    {
-      name: 'NET',
-      level: 'Intermediate',
-      isImproving: false
-    }];
+    vm.interests = InterestService.getInterestList();
 
     function alertInfo(param) {
       alert(JSON.stringify(param));
