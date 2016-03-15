@@ -1,29 +1,50 @@
-angular.module('my-app').factory('InterestService', InterestService);
+(function() {
+  'use strict';
 
-function InterestService() {
-  var service = {};
-  var interests = [{
-    name: 'JavaScript',
-    level: 'Advanced',
-    isImproving: true
-  },
-  {
-    name: 'AngularJS',
-    level: 'Beginner',
-    isImproving: true
-  },
-  {
-    name: 'NET',
-    level: 'Intermediate',
-    isImproving: false
-  }];
+  angular.module('my-app').factory('InterestService', InterestService);
 
-  service.getInterestList = getInterestList;
-  
-  return service;
+  function InterestService() {
+    var service = {};
+    var interests = [{
+      name: 'JavaScript',
+      level: 'Advanced',
+      isImproving: true
+    },
+    {
+      name: 'AngularJS',
+      level: 'Beginner',
+      isImproving: true
+    },
+    {
+      name: 'NET',
+      level: 'Intermediate',
+      isImproving: false
+    }];
 
-  function getInterestList() {
-    return interests;
+    var name = 'Cristi';
+    var personalInfo = {
+      age: 25,
+      gender: 'm'
+    };
+
+    service.getInterestList = getInterestList;
+    service.getName = getName;
+    service.getPersonalInfo = getPersonalInfo;
+
+    return service;
+
+    function getInterestList() {
+      return interests;
+    }
+
+    function getName() {
+      return name;
+    }
+
+    function getPersonalInfo() {
+      return personalInfo;
+    }
+
   }
 
-}
+})();

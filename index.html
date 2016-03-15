@@ -41,7 +41,7 @@
   </head>
   <body ng-app="my-app">
     <div ng-controller="GreetingController as vm">
-      <p>Hello World</p>
+      <p>{{vm.message}}</p>
       <p>Hello my name is {{vm.name}}</p>
       <div>
         <img ng-if="vm.personalInfo.gender == 'm'" src="https://maxcdn.icons8.com/wp-content/uploads/2014/10/boy.png" />
@@ -84,5 +84,6 @@
     <script src="app/greeting.controller.js"></script>
     <script src="app/tab.controller.js"></script>
     <script src="app/interest.service.js"></script>
+    <script src="app/messages.service.js"></script>
   </body>
 </html>

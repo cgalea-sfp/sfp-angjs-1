@@ -3,19 +3,17 @@
 
   angular.module('my-app').controller('GreetingController', GreetingController);
 
-  GreetingController.$inject = ['InterestService'];
+  GreetingController.$inject = ['InterestService', 'MessagesService'];
 
-  function GreetingController(InterestService) {
+  function GreetingController(InterestService, MessagesService) {
     var vm = this;
-    vm.name = 'Cristi';
-    vm.personalInfo = {
-      age: 25,
-      gender: 'm'
-    };
+    vm.name = InterestService.getName();
+    vm.personalInfo = InterestService.getPersonalInfo();
     vm.togglePersonalInfo = togglePersonalInfo;
     vm.alertInfo = alertInfo;
     vm.isVisible = true;
 
+    vm.message = MessagesService.getCurrentMessage();
     vm.interests = InterestService.getInterestList();
 
     function alertInfo(param) {
