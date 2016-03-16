@@ -31,3 +31,9 @@ img {
   width: 100px;
   height: 100px;
 }
+
+table, td, th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}

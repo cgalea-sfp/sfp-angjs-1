@@ -1,3 +1,18 @@
-<p>
-  Interest list goes here
-</p>
+<div class="page">
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Level</th>
+      <th>Experience</th>
+      <th>isImproving</th>
+    </tr>
+    <tr ng-repeat="interest in vm.interestlist">
+      <td>{{interest.name}}</td>
+      <td>{{interest.level}}</td>
+      <td>{{interest.experience}}</td>
+      <td>{{interest.isImproving}}</td>
+    </tr>
+  </table>
+
+</div>
