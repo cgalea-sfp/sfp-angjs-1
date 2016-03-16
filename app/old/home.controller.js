@@ -1,5 +1,5 @@
 (function () {
-  angular.module('my-app').controller('HomeController', HomeController);
+  angular.module('old').controller('HomeController', HomeController);
 
   function HomeController() {
     var vm = this;

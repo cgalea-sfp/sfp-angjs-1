@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('my-app').controller('InterestController', InterestController);
+  angular.module('old').controller('InterestController', InterestController);
 
 InterestController.$inject = ['InterestService', 'PersinfoService'];
 

@@ -1,5 +1,5 @@
 (function () {
-  angular.module('my-app').factory('InterestService', InterestService);
+  angular.module('old').factory('InterestService', InterestService);
 
   function InterestService() {
     var service = {};
