@@ -12,11 +12,15 @@
     }, function (error) {
       console.log('error: ' + error.message);
     });
-    vm.delteItem = delteItem;
+    vm.deleteItem = deleteItem;
 
-    function delteItem(e, id) {
+    function deleteItem(e, id) {
       e.stopPropagation();
-      console.log('This will delete the item with id: ', id);
+      InterestsService.removeInterest(id).then(function (response) {
+        $state.go($state.current, {}, {reload: true});
+      }, function (error) {
+        console.log('error: ' + error.message);
+      });
     }
   }
 })();

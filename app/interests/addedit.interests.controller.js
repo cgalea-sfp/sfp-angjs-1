@@ -26,14 +26,25 @@
 
     function save(e) {
       e.preventDefault();
-      console.log('This will save the items');
       var interest = {
+        id: vm.interest.id, //on the add operation this will be undefined
         name: vm.interest.name || '',
         level: vm.interest.level || 'Beginner',
         isImproving: vm.interest.isImproving || false
       };
-      InterestsService.addInterest(interest);
-      $state.go('interests');
+      if (isEdit) {
+        InterestsService.editInterest(interest).then(function (response) {
+          $state.go('interests');
+        }, function (error) {
+          console.log('error: ' + error.message);
+        });
+      } else {
+        InterestsService.addInterest(interest).then(function (response) {
+          $state.go('interests');
+        }, function (error) {
+          console.log('error: ' + error.message);
+        });
+      }
     }
   }
 })();

@@ -38,38 +38,19 @@
 
     function getInterestById(id) {
       return $http.get('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + id);
-      // for (var i = 0, len = interests.length; i < len; i++) {
-      //   if (interests[i].id === id) {
-      //     return interests[i];
-      //   }
-      // }
-      // return false;
     }
 
     function addInterest(interest) {
       interest.id = generateId();
-      interests.push(interest);
-      return true;
+      return $http.post('https://sfp-angjs1-back.herokuapp.com/api/interests', interest);
     }
 
     function editInterest(interest) {
-      for (var i = 0, len = interests.length; i < len; i++) {
-        if (interests[i].id === interest.id) {
-          interests[i] = interest;
-          return true;
-        }
-      }
-      return false;
+      return $http.put('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + interest.id, interest);
     }
 
     function removeInterest(id) {
-      for (var i = 0, len = interests.length; i < len; i++) {
-        if (interests[i].id === id) {
-          interests.splice(i, 1);
-          return true;
-        }
-      }
-      return false;
+      return $http.delete('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + id);
     }
 
     function generateId() {

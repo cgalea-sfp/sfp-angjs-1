@@ -16,7 +16,7 @@
       <td>{{ interest.level | uppercase }}</td>
       <td>{{ interest.isImproving ? 'Yes' : 'No' }}</td>
       <td ui-sref='interests-edit({id: interest.id})'>Edit</td>
-      <td ng-click="vm.delteItem($event, interest.id);">Delete</td>
+      <td ng-click="vm.deleteItem($event, interest.id);">Delete</td>
     </tr>
   </table>
 </div>
