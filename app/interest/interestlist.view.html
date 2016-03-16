@@ -6,12 +6,18 @@
       <th>Level</th>
       <th>Experience</th>
       <th>isImproving</th>
+      <th>
+
+      </th>
     </tr>
-    <tr ng-repeat="interest in vm.interestlist">
+    <tr ui-sref="editinterest({ id: interest.id })" ng-repeat="interest in vm.interestlist">
       <td>{{interest.name}}</td>
       <td>{{interest.level}}</td>
       <td>{{interest.experience}}</td>
       <td>{{interest.isImproving}}</td>
+      <td>
+        <button ng-click="vm.deleteItem(interest.id)">Delete</button>
+      </td>
     </tr>
   </table>
 

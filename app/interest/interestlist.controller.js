@@ -8,5 +8,10 @@
     var vm = this;
     vm.interestlist = InterestManagementService.getInterests();
     console.log('it works');
+    vm.deleteItem = deleteItem;
+
+    function deleteItem(id) {
+      InterestManagementService.deleteInterest(id);
+    }
   }
 })();

@@ -14,8 +14,13 @@
         templateUrl: 'app/interest/interestlist.view.html',
         controller: 'InterestListController as vm'
       })
-      .state('addeditinterest', {
-        url: '/addedit-interest',
+      .state('addinterest', {
+        url: '/addedit-interest/',
+        templateUrl: 'app/interest/addeditinterest.view.html',
+        controller: 'AddEditInterestController as vm'
+      })
+      .state('editinterest', {
+        url: '/addedit-interest/:id',
         templateUrl: 'app/interest/addeditinterest.view.html',
         controller: 'AddEditInterestController as vm'
       });
