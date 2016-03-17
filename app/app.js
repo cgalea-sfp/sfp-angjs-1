@@ -1,6 +1,6 @@
 (function() {
   'use strict';
 
-  angular.module('my-app', ['ui.router', 'legacy']);
+  angular.module('my-app', ['ui.router', 'legacy', 'employee']);
 
 })();
