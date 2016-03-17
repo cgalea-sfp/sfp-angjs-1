@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('my-app').factory('MessagesService', MessagesService);
+  angular.module('legacy').factory('MessagesService', MessagesService);
 
   function MessagesService() {
     return {

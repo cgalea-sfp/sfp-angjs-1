@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('my-app').controller('TabController', TabController);
+  angular.module('legacy').controller('TabController', TabController);
 
   function TabController() {
     var vm = this;

@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('my-app').controller('GreetingController', GreetingController);
+  angular.module('legacy').controller('GreetingController', GreetingController);
 
   GreetingController.$inject = ['InterestService', 'MessagesService'];
 

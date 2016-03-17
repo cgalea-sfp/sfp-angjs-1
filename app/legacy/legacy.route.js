@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('my-app').config(config);
+  angular.module('legacy').config(config);
 
   config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -11,16 +11,16 @@
     $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: '/app/home.view.html'
+      templateUrl: '/app/legacy/home.view.html'
     })
     .state('greeting', {
       url: '/greeting',
-      templateUrl: 'app/greeting.view.html',
+      templateUrl: 'app/legacy/greeting.view.html',
       controller: 'GreetingController as vm'
     })
     .state('tab', {
       url: '/tab',
-      templateUrl: 'app/tab.view.html',
+      templateUrl: 'app/legacy/tab.view.html',
       controller: 'TabController as vm'
     });
   }
