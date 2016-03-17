@@ -37,6 +37,15 @@
         margin: 10px;
         padding: 10px;
       }
+
+      table {
+        border: 1px solid black;
+      }
+
+      th, td {
+        border: 1px solid black;
+        padding: 10px;
+      }
     </style>
   </head>
   <body ng-app="my-app">
@@ -45,6 +54,7 @@
         <li><a ui-sref="home">Home</a></li>
         <li><a ui-sref="greeting">Greeting</a></li>
         <li><a ui-sref="tab">Tab</a></li>
+        <li><a ui-sref="employee">Employees</a></li>
       </ul>
     </nav>
     <div class="clear">
@@ -60,6 +70,7 @@
 
     <script src="app/employee/employee.route.js"></script>
     <script src="app/employee/employee.controller.js"></script>
+    <script src="app/employee/employee.service.js"></script>
 
     <script src="app/legacy/legacy.route.js"></script>
     <script src="app/legacy/greeting.controller.js"></script>

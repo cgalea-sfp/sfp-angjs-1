@@ -3,8 +3,11 @@
 
   angular.module('employee').controller('EmployeeController', EmployeeController);
 
-  function EmployeeController() {
+  EmployeeController.$inject = ['EmployeeService'];
+
+
+  function EmployeeController(EmployeeService) {
     var vm = this;
-    console.log('this is working');
+    vm.employeeList = EmployeeService.getEmployeeList();
   }
 })();
