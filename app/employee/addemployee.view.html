@@ -1,0 +1,15 @@
+<h1>{{vm.pageName}} Employee</h1>
+
+<form ng-submit="vm.addEmployee()">
+  <label for="firstName">First Name</label>
+  <input ng-model="vm.employee.firstName" type="text" id="firstName" />
+  <br />
+  <label for="lastName">Last Name</label>
+  <input ng-model="vm.employee.lastName" type="text" id="lastName" />
+  <br />
+  <label for="age">Age</label>
+  <input ng-model="vm.employee.age" type="number" id="age" />
+  <br />
+  <input type="submit" />
+  <input ui-sref="employee" type="button" value="Back" />
+</form>

@@ -26,6 +26,8 @@
     service.getEmployeeList = getEmployeeList;
     service.getEmployeeById = getEmployeeById;
     service.addEmployee = addEmployee;
+    service.editEmployee = editEmployee;
+    service.deleteEmployee = deleteEmployee;
 
     return service;
 
@@ -43,7 +45,38 @@
     }
 
     function addEmployee(newEmployee) {
+      newEmployee.id = genereateId();
       employeeList.push(newEmployee);
+    }
+
+    function editEmployee(curentEmployee) {
+      for (var i = 0; i < employeeList.length; i++) {
+        if(employeeList[i].id == curentEmployee.id) {
+          employeeList[i] = curentEmployee;
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function deleteEmployee(employeeId) {
+      var index = -1;
+      for (var i = 0; i < employeeList.length; i++) {
+        if(employeeList[i].id == employeeId) {
+          index = i;
+        }
+      }
+
+      if (index != -1) {
+        employeeList.splice(index, 1);
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function genereateId() {
+      return employeeList.length + 1;
     }
   }
 })();

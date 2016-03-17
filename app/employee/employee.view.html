@@ -1,14 +1,20 @@
 <h1>Employee List</h1>
 
+<a ui-sref="addEmployee">Add Employee</a>
 <table>
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Age</th>
+    <th>Actions</th>
   </tr>
-  <tr ng-repeat="employee in vm.employeeList">
+  <tr ng-repeat="employee in vm.employeeList | orderBy: '-age'">
     <td>{{ employee.firstName }}</td>
     <td>{{ employee.lastName }}</td>
     <td>{{ employee.age }}</td>
+    <td>
+      <button ng-click="vm.deleteEmployee(employee.id)">Delete</button>
+      <button ui-sref="editEmployee({ id: employee.id })">Edit</button>
+    </td>
   </tr>
 </table>
