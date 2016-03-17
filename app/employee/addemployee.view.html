@@ -1,8 +1,8 @@
 <h1>{{vm.pageName}} Employee</h1>
 
-<form ng-submit="vm.addEmployee()">
+<form name="addEditEmployee" ng-submit="addEditEmployee.$valid && vm.addEmployee()">
   <label for="firstName">First Name</label>
-  <input ng-model="vm.employee.firstName" type="text" id="firstName" />
+  <input ng-model="vm.employee.firstName" type="email" id="firstName" required />
   <br />
   <label for="lastName">Last Name</label>
   <input ng-model="vm.employee.lastName" type="text" id="lastName" />
