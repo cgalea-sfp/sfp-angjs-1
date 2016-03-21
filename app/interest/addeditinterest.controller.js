@@ -10,19 +10,42 @@
     vm.currentInterest = {};
     vm.saveInterest = saveInterest;
     var isEdit = $state.params.id;
+    vm.isFinishedLoading = false;
     vm.pageTitle = isEdit ? 'Edit' : 'Add';
 
     if (isEdit) {
-      vm.currentInterest = InterestManagementService.getInterestById($state.params.id);
+
+      InterestManagementService.getInterestById($state.params.id).then(function(result) {
+        vm.currentInterest = result.data.data;
+        vm.isFinishedLoading = true;
+      }, function(error) {
+        alert(error.data.message);
+      });
     }
     function saveInterest() {
       if (isEdit) {
-        InterestManagementService.editInterest(vm.currentInterest);
+        InterestManagementService.editInterest(vm.currentInterest).then(function(result) {
+          if(result.data.success) {
+            $state.go("interestlist");
+          } else {
+            alert('There was an error: '+ result.data.message);
+          }
+        }, function(error) {
+          alert(error.data.message);
+        });
       } else {
-        InterestManagementService.addInterest(vm.currentInterest);
+        InterestManagementService.addInterest(vm.currentInterest).then(function(result) {
+          if(result.data.success) {
+            $state.go("interestlist");
+          } else {
+            alert('There was an error: '+ result.data.message);
+          }
+        }, function(error) {
+          alert(error.data.message);
+        });
       }
 
-      $state.go("interestlist");
+
     }
   }
 })();

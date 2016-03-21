@@ -3,7 +3,9 @@
 
   angular.module('interest').factory('InterestManagementService', InterestManagementService);
 
-  function InterestManagementService() {
+  InterestManagementService.$inject = ['$http'];
+
+  function InterestManagementService($http) {
     var service = {};
     var interests = [{
       id: 'js',
@@ -22,6 +24,8 @@
       isImproving: false
     }];
 
+    var currentIndex = 4;
+
     service.getInterests = getInterests;
     service.getInterestById = getInterestById;
     service.addInterest = addInterest;
@@ -31,40 +35,24 @@
     return service;
 
     function getInterests() {
-      return angular.copy(interests);
+      return $http.get('https://sfp-angjs1-back.herokuapp.com/api/interests', {});
     }
 
     function getInterestById(id) {
-      for (var i = 0; i < interests.length; i++) {
-        if (interests[i].id == id) {
-          return angular.copy(interests[i]);
-        }
-      }
-      return false;
+      return $http.get('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + id);
     }
 
     function addInterest(newInterest) {
-      interests.push(newInterest);
+      newInterest.id = currentIndex++;
+      return $http.post('https://sfp-angjs1-back.herokuapp.com/api/interests', newInterest);
     }
 
     function editInterest(newInterest) {
-      for (var i = 0; i < interests.length; i++) {
-        if (interests[i].id == newInterest.id) {
-          interests[i] = newInterest;
-        }
-      }
+      return $http.put('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + newInterest.id, newInterest);
     }
 
     function deleteInterest(id) {
-      var index = -1;
-      for (var i = 0; i < interests.length; i++) {
-        if (interests[i].id == id) {
-          index = i;
-        }
-      }
-      if (index != -1) {
-        interests.splice(index, 1);
-      }
+      return $http.delete('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + id);
     }
   }
 })();

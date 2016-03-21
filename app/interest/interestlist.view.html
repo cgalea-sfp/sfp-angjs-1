@@ -14,7 +14,7 @@
       <td>{{interest.level}}</td>
       <td>{{interest.isImproving ? 'Yes' : 'No'}}</td>
       <td>
-        <button ng-click="vm.deleteItem(interest.id)">Delete</button>
+        <button ng-click="vm.deleteItem($event, interest.id)">Delete</button>
       </td>
     </tr>
   </table>

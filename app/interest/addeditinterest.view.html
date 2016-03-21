@@ -6,13 +6,13 @@
     <br />
     <label for="interest-level">Level</label>
     <select ng-model="vm.currentInterest.level" name="interest-name" id="interest-name">
-      <option value="beginner">
+      <option value="Beginner">
         Beginner
       </option>
-      <option value="intermediate">
+      <option value="Intermediate">
         Interemdiate
       </option>
-      <option value="advanced">
+      <option value="Advanced">
         Advanced
       </option>
     </select>
@@ -23,4 +23,5 @@
     <input type="submit" value="Save" />
     <button ui-sref="interestlist">Back</button>
   </form>
+  <my-interest ng-if="vm.isFinishedLoading" current="{{vm.currentInterest}}"></my-interest>
 </div>
