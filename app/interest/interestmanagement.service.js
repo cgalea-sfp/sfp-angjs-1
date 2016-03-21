@@ -9,20 +9,17 @@
       id: 'js',
       name: 'JavaScript',
       level: 'advanced',
-      experience: 5,
       isImproving: true
     }, {
       id: 'ng',
       name: 'AngularJS',
       level: 'beginner',
-      experience: 2,
       isImproving: true
     }, {
       id: 'nd',
       name: 'Node',
       level: 'intermediate',
-      experience: 1,
-      isImproving: true
+      isImproving: false
     }];
 
     service.getInterests = getInterests;
@@ -34,13 +31,13 @@
     return service;
 
     function getInterests() {
-      return interests;
+      return angular.copy(interests);
     }
 
     function getInterestById(id) {
       for (var i = 0; i < interests.length; i++) {
         if (interests[i].id == id) {
-          return interests[i];
+          return angular.copy(interests[i]);
         }
       }
       return false;

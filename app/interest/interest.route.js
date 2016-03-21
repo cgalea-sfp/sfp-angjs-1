@@ -23,6 +23,11 @@
         url: '/addedit-interest/:id',
         templateUrl: 'app/interest/addeditinterest.view.html',
         controller: 'AddEditInterestController as vm'
+      })
+      .state('displayInterest', {
+        url: '/display-interest',
+        templateUrl: 'app/interest/displayInterest.view.html',
+        controller: 'InterestListController as vm'
       });
   }
 

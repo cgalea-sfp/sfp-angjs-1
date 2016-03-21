@@ -37,3 +37,31 @@ table, td, th {
   border-collapse: collapse;
   padding: 10px;
 }
+
+td {
+  cursor: pointer;
+}
+
+tr:hover {
+  background: #6e9e58;
+}
+
+.interest-card {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  width: 350px;
+  height: 100px;
+}
+
+.green {
+  background: #9bd78c;
+}
+
+.red {
+  background: #f16843;
+}
+
+.highlight {
+  font-weight: bold;
+}
