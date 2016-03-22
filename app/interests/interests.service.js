@@ -4,6 +4,7 @@
   angular.module('interests').service('InterestsService', InterestsService);
 
   InterestsService.$inject = ['$http'];
+
   function InterestsService($http) {
     var service = {
       getInterests: getInterests,
@@ -33,42 +34,24 @@
     }];
 
     function getInterests() {
-      return angular.copy(interests);
+      return $http.get('https://sfp-angjs1-back.herokuapp.com/api/interests', {});
     }
 
     function getInterestById(id) {
-      for (var i = 0, len = interests.length; i < len; i++) {
-        if (interests[i].id === id) {
-          return angular.copy(interests[i]);
-        }
-      }
-      return false;
+      return $http.get('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + id, {});
     }
 
     function addInterest(interest) {
       interest.id = generateId();
-      interests.push(interest);
-      return true;
+      return $http.post('https://sfp-angjs1-back.herokuapp.com/api/interests', interest, {});
     }
 
     function editInterest(interest) {
-      for (var i = 0, len = interests.length; i < len; i++) {
-        if (interests[i].id === interest.id) {
-          interests[i] = interest;
-          return true;
-        }
-      }
-      return false;
+      return $http.put('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + interest.id, interest, {});
     }
 
     function removeInterest(id) {
-      for (var i = 0, len = interests.length; i < len; i++) {
-        if (interests[i].id === id) {
-          interests.splice(i, 1);
-          return true;
-        }
-      }
-      return false;
+      return $http.delete('https://sfp-angjs1-back.herokuapp.com/api/interests' + '/' + id, {});
     }
 
     function generateId() {
