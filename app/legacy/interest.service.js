@@ -1,9 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('legacy').factory('InterestService', InterestService);
+  angular.module('legacy').factory('InterestOldService', InterestOldService);
 
-  function InterestService() {
+  function InterestOldService() {
     var service = {};
     var interests = [{
       name: 'JavaScript',

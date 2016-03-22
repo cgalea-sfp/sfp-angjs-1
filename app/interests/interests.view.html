@@ -1,0 +1,22 @@
+<div class="page">
+  <h2>Interests</h2>
+  <h3>
+    <a ui-sref="interests-add">Add Interest</a>
+  </h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Level</th>
+      <th>Is Improving</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="interest in vm.interests track by $index" class="row" ng-class="{'odd-row': $index % 2 == 0}" ui-sref='interests-edit({id: interest.id})'>
+      <td>{{ interest.name }}</td>
+      <td>{{ interest.level | uppercase }}</td>
+      <td>{{ interest.isImproving ? 'Yes' : 'No' }}</td>
+      <td><button ui-sref='interests-edit({id: interest.id})'>Edit</button></td>
+      <td><button ng-click="vm.delteItem($event, interest.id);">Delete</button></td>
+    </tr>
+  </table>
+</div>

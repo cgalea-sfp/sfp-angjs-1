@@ -1,0 +1,24 @@
+<div class="page">
+  <h2>{{vm.pageName}} Interest</h2>
+
+  <form name="interestsForm" ng-submit=" interestsForm.$valid && vm.save($event)" novalidate>
+    <div class="form-row">
+      <label for="name">Name*</label>
+      <input required ng-model="vm.interest.name" name="nume" id="nume" type="text" />
+    </div>
+    <div class="form-row">
+      <label for="level">Level</label>
+      <select ng-model="vm.interest.level" id="level">
+        <option value="Beginnger">Beginnger</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label for="isImprov">Is Improving</label>
+      <input ng-model="vm.interest.isImproving" id="isImprov" type="checkbox" />
+    </div>
+    <button ui-sref="interests">Back</button>
+    <input type="submit" value="Save">
+  </form>
+</div>

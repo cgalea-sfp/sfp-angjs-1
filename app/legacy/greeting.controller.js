@@ -3,18 +3,18 @@
 
   angular.module('legacy').controller('GreetingController', GreetingController);
 
-  GreetingController.$inject = ['InterestService', 'MessagesService'];
+  GreetingController.$inject = ['InterestOldService', 'MessagesService'];
 
-  function GreetingController(InterestService, MessagesService) {
+  function GreetingController(InterestOldService, MessagesService) {
     var vm = this;
-    vm.name = InterestService.getName();
-    vm.personalInfo = InterestService.getPersonalInfo();
+    vm.name = InterestOldService.getName();
+    vm.personalInfo = InterestOldService.getPersonalInfo();
     vm.togglePersonalInfo = togglePersonalInfo;
     vm.alertInfo = alertInfo;
     vm.isVisible = true;
 
     vm.message = MessagesService.getCurrentMessage();
-    vm.interests = InterestService.getInterestList();
+    vm.interests = InterestOldService.getInterestList();
 
     function alertInfo(param) {
       alert(JSON.stringify(param));
